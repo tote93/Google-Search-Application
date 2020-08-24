@@ -3,13 +3,14 @@ import axios from "./axios";
 import "./App.css";
 /* import requests from "./request"; */
 import Search from "./pages/Search";
-/* import { useStateValue } from "./StateProvider"; */
+import { useStateValue } from "./StateProvider";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
-  /*   const [{ query, currentPage }, dispatch] = useStateValue();
-  useEffect(() => {
+  const [{ query }, dispatch] = useStateValue();
+  /*useEffect(() => {
     async function fetchData() {
       const request = await axios.get(
         requests.fetchWeb + `&q=${query}&start=${currentPage}`
@@ -29,16 +30,12 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/images">
-            <Search urlLogo="https://i.imgur.com/gMaMeYJ.png" />
-          </Route>
-          <Route exact path="/images/search/">
-            <h1>images id</h1>
-          </Route>
-          <Route exact path="/website">
-            <h1>Webs</h1>
+            {query && <Navbar link="website" />}
+            {!query && <Search urlLogo="https://i.imgur.com/gMaMeYJ.png" />}
           </Route>
           <Route path="/">
-            <Search urlLogo="https://www.google.es/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+            {query && <Navbar link="images" />}
+            {!query && <Search urlLogo="https://i.imgur.com/qb09Ntv.png" />}
           </Route>
         </Switch>
       </div>

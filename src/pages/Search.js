@@ -1,8 +1,8 @@
 import React from "react";
-import SearchIcon from "@material-ui/icons/Search";
 import "./styles/Search.css";
 import { useState } from "react";
 import { useStateValue } from "../StateProvider";
+import SearchIcon from "@material-ui/icons/Search";
 
 function Search({ urlLogo }) {
   const [inputQuery, setInputQuery] = useState("");
