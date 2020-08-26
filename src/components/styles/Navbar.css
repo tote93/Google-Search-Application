@@ -15,30 +15,8 @@
 .navbar__search {
   flex: 0.9;
 }
-.navbar__options {
-  display: none;
-  position: absolute;
-  right: 0;
-}
-.navbar__link {
-  margin-right: 15px;
-  text-decoration: none;
-  cursor: pointer;
-  line-height: 24px;
-  color: rgba(0, 0, 0, 0.87);
-  text-transform: capitalize;
-}
-
-.navbar__userPhoto {
-  max-height: 35px;
-  object-fit: contain;
-  border-radius: 50%;
-}
 
 @media all and (min-width: 1080px) {
-  .navbar__options {
-    display: flex;
-  }
   .navbar__image {
     max-height: 50px;
   }

@@ -1,0 +1,33 @@
+@media all and (min-width: 1080px) {
+  .ImagesBuilder__img {
+    max-width: 25vh;
+  }
+}
+
+.ImagesBuilder__img {
+  width: 25vh;
+  background: rgb(43, 88, 118);
+  background: linear-gradient(
+    90deg,
+    rgba(43, 88, 118, 0.7175245098039216) 13%,
+    rgba(78, 67, 118, 0.8435749299719888) 71%
+  );
+  height: 18vh;
+  object-fit: contain;
+  margin: 2px;
+  border-radius: 3px;
+  max-width: 25vh;
+  max-height: 18vh;
+  transition: 0.5s;
+}
+.ImagesBuilder__img:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.ImagesBuilder__images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

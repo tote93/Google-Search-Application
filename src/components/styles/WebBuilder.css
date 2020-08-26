@@ -1,0 +1,43 @@
+.webBuilder__webSites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.webBuilder__row {
+  margin: 2px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 5px 5px 5px 15px;
+  border-radius: 3px;
+  width: -webkit-fill-available;
+}
+.webBuilder__title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: -5px;
+}
+.webBuilder__link {
+  font-size: 0.7em;
+  line-height: 1em;
+}
+.webBuilder__info {
+  font-size: 0.8em;
+  line-height: 1em;
+  margin: 2px 0;
+}
+@media all and (min-width: 1080px) {
+  .webBuilder__webSites {
+    width: 60%;
+  }
+  .webBuilder__title {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .webBuilder__link {
+    font-size: 0.7em;
+  }
+  .webBuilder__info {
+    font-size: 0.8em;
+  }
+}
