@@ -17,8 +17,15 @@
   margin-top: 1vh;
   max-width: 100vh;
   border: 1px solid #e9e9e9;
-  padding: 5px 5px 5px 20px;
+  padding: 7px 7px 7px 20px;
   font-weight: 300;
+  transition: all 0.1s;
+}
+
+.searchNavbar__input:focus,
+.searchNavbar__input:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  transition: all 0.5s;
 }
 .searchNavbar__links {
   display: flex;

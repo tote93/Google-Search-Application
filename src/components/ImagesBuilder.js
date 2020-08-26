@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/ImagesBuilder.css";
 import { useStateValue } from "../StateProvider";
-import Pagination from "./Pagination";
 
 function ImagesBuilder() {
   const [{ imagesResults }, dispatch] = useStateValue();
