@@ -1,3 +1,29 @@
+# Google Search App
+
+Create a web application that allows you to search for a query, and to display the google search results in the format of images and web pages.
+The results has to show the web pages information, and images per page.
+To do this, you must use the Google Search Engine api:
+
+https://developers.google.com/custom-search/v1/using_rest
+
+# DEMO TEST
+
+It is possible to see a running demo test in the next link:
+https://go-search-1a565.web.app/
+
+# Features
+
+- [x] Allow search pressing Enter key and clickSearch.
+- [x] Dont allow special characters in input search.
+- [x] Folder scafolding.
+- [x] Splitted into components and pages.
+- [x] Checked responsivity in many devices.
+- [x] Commented the code, and documentation with readme.
+- [x] The webApp has been deployed in the previous url to make it easier to see the results.
+- [x] Have been tested in different resolutions, also using Chrome, and Safari (both mobile and desktop).
+
+# How start?
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

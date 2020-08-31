@@ -33,12 +33,12 @@ function SearchNavbar() {
         defaultValue={query}
       />
       <div className="searchNavbar__links">
-        <SearchIcon className="searchNavbar__icon" />
         <Link className="searchNavbar__link" to="/results/websites">
+          <SearchIcon className="searchNavbar__icon" />
           All
         </Link>
-        <ImageOutlinedIcon className="searchNavbar__icon" />
         <Link className="searchNavbar__link" to="/results/images">
+          <ImageOutlinedIcon className="searchNavbar__icon" />
           Images
         </Link>
       </div>

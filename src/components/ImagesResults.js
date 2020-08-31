@@ -4,6 +4,7 @@ import requests from "../request";
 import { useStateValue } from "../StateProvider";
 import Pagination from "./Pagination";
 import ImagesBuilder from "./ImagesBuilder";
+import SearchInformationResults from "./SearchInformationResults";
 
 function ImagesResults() {
   const [{ query, currentPage }, dispatch] = useStateValue();
@@ -15,6 +16,8 @@ function ImagesResults() {
       dispatch({
         type: "SET_SEARCH_RESULTS",
         images: request.data.items,
+        totalTime: request.data.searchInformation.formattedSearchTime,
+        totalResults: request.data.searchInformation.formattedTotalResults,
       });
       return request;
     }
@@ -22,6 +25,7 @@ function ImagesResults() {
   }, [currentPage, query]);
   return (
     <div className="container">
+      <SearchInformationResults />
       <ImagesBuilder />
       <Pagination />
     </div>

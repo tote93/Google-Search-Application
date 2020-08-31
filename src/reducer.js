@@ -3,7 +3,8 @@ export const initialState = {
   currentPage: 11,
   imagesResults: [],
   webResults: [],
-  errors: [],
+  totalTime: "",
+  totalResults: "",
 };
 
 const reducer = (state, action) => {
@@ -12,9 +13,10 @@ const reducer = (state, action) => {
       // This case set the web and image results
       return {
         ...state,
+        totalTime: action.totalTime,
         imagesResults: action.images,
         webResults: action.webs,
-        totalResults: action.results,
+        totalResults: action.totalResults,
       };
     case "SET_QUERY":
       // This case set the search query
@@ -22,9 +24,6 @@ const reducer = (state, action) => {
     case "SET_PAGE":
       // This case set the page to the next 11 (1 page = num*10 +1)
       return { ...state, currentPage: 10 * action.page + 1 };
-    case "SET_ERROR":
-      // Set the error state
-      return { ...state, errors: action.error };
     default:
       return { state };
   }

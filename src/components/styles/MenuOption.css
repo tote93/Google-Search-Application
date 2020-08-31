@@ -17,7 +17,10 @@
 }
 
 .menuOption__userPhoto {
-  max-height: 35px;
-  object-fit: contain;
-  border-radius: 50%;
+  transition: ease-in-out all 0.3s;
+}
+.menuOption__userPhoto:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: ease-in-out all 0.3s;
 }
