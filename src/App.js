@@ -1,44 +1,49 @@
-import React, { useState, useEffect } from "react";
-import axios from "./axios";
+import React from "react";
 import "./App.css";
-/* import requests from "./request"; */
+import Navbar from "./components/Navbar";
 import Search from "./pages/Search";
-/* import { useStateValue } from "./StateProvider"; */
-
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { Redirect, BrowserRouter, Route, Switch } from "react-router-dom";
+import MenuOption from "./components/MenuOption";
+import ImagesResults from "./components/ImagesResults";
+import WebResults from "./components/WebResults";
+import { useStateValue } from "./StateProvider";
 function App() {
-  /*   const [{ query, currentPage }, dispatch] = useStateValue();
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(
-        requests.fetchWeb + `&q=${query}&start=${currentPage}`
-      );
-      console.log(
-        "https://www.googleapis.com/customsearch/v1" +
-          requests.fetchWeb +
-          `&q=${query}&start=${currentPage}`
-      );
-      console.log(request.data);
-      return request;
-    }
-    //fetchData();
-  }, []); */
+  const [{ query }, dispatch] = useStateValue();
+  let redirectToUrl;
+  if (!query) {
+    //check condition
+    redirectToUrl = <Redirect to={"/"} />;
+  }
   return (
     <BrowserRouter>
       <div className="app">
+        {redirectToUrl}
         <Switch>
           <Route exact path="/images">
-            <Search urlLogo="https://i.imgur.com/gMaMeYJ.png" />
+            <MenuOption link={"websites"} />
+            <Search link={"images"} urlLogo="https://i.imgur.com/gMaMeYJ.png" />
           </Route>
-          <Route exact path="/images/search/">
-            <h1>images id</h1>
+          <Route exact path="/websites">
+            <MenuOption link={"images"} />
+            <Search
+              link={"websites"}
+              urlLogo="https://i.imgur.com/qb09Ntv.png"
+            />
           </Route>
-          <Route exact path="/website">
-            <h1>Webs</h1>
+          <Route exact path="/results/images">
+            <Navbar />
+            <ImagesResults />
           </Route>
-          <Route path="/">
-            <Search urlLogo="https://www.google.es/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" />
+          <Route exact path="/results/websites">
+            <Navbar />
+            <WebResults />
+          </Route>
+          <Route exact path="/">
+            <MenuOption link={"images"} />
+            <Search
+              link={"websites"}
+              urlLogo="https://i.imgur.com/qb09Ntv.png"
+            />
           </Route>
         </Switch>
       </div>

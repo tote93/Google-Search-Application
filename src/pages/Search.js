@@ -1,12 +1,14 @@
 import React from "react";
-import SearchIcon from "@material-ui/icons/Search";
 import "./styles/Search.css";
 import { useState } from "react";
 import { useStateValue } from "../StateProvider";
+import SearchIcon from "@material-ui/icons/Search";
+import { useHistory } from "react-router-dom";
 
-function Search({ urlLogo }) {
+function Search({ urlLogo, link }) {
   const [inputQuery, setInputQuery] = useState("");
   const [{}, dispatch] = useStateValue();
+  const history = useHistory();
 
   const dispatchAction = () => {
     if (inputQuery) {
@@ -14,6 +16,7 @@ function Search({ urlLogo }) {
         type: "SET_QUERY",
         query: inputQuery,
       });
+      history.push("/results/" + link);
     }
   };
 

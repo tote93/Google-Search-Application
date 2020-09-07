@@ -77,7 +77,7 @@
   }
   .search__input {
     border-radius: 200px 200px 200px 200px;
-    padding: 8px 8px 8px 30px;
+    padding: 10px 10px 10px 30px;
     transition: 1.3s;
   }
   .search__logo {

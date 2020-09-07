@@ -1,0 +1,23 @@
+.navbar {
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  border-bottom: 1px solid gray;
+}
+.navbar__image {
+  flex: 0.1;
+  max-height: 30px;
+  object-fit: contain;
+}
+.navbar__search {
+  flex: 0.9;
+}
+
+@media all and (min-width: 1080px) {
+  .navbar__image {
+    max-height: 50px;
+  }
+}
